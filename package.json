@@ -1,0 +1,27 @@
+{
+  "name": "tafel",
+  "version": "1.0.0",
+  "description": "Die Tafel is a simple notepad like a blackboard.",
+  "main": "app/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalmare/tafel.git"
+  },
+  "author": "kalmare",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kalmare/tafel/issues"
+  },
+  "homepage": "https://github.com/kalmare/tafel#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "electron": "^2.0.8",
+    "electron-connect": "^0.6.3",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1"
+  }
+}
