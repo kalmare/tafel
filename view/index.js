@@ -10,7 +10,7 @@ document.addEventListener('keydown', e => {
         area.setSelectionRange(pos + 4, pos + 4);
     }
     if (e.key === '(' || e.key === '{' || e.key === '[') {
-        // Complement closing parenthesis
+        // Automatically insert closing braces
         e.preventDefault();
 
         const area = document.getElementById('area');
