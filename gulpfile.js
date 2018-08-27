@@ -1,7 +1,10 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
+const uglifyes = require('uglify-es');
+const composer = require('gulp-uglify/composer');
 const cleancss = require('gulp-clean-css');
+const minify = composer(uglifyes, console);
+const pump = require('pump');
 
 const electron = require('electron-connect').server.create();
 
@@ -13,8 +16,12 @@ gulp.task('babel', () => {
     return gulp.src('view/*.js').pipe(babel()).pipe(gulp.dest('build/'));
 });
 
-gulp.task('minify-js', ['babel'], () => {
-    return gulp.src('build/*.js').pipe(uglify()).pipe(gulp.dest('build/'));
+gulp.task('minify-js', ['babel'], cb => {
+    pump([
+        gulp.src('build/*.js'),
+        minify(),
+        gulp.dest('build/')
+    ], cb);
 });
 
 gulp.task('minify-css', () => {
