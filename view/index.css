@@ -11,6 +11,9 @@ textarea {
     font-size: 15px;
     font-family: Inconsolata, "Hiragino Kaku Gothic ProN", monospace;
     line-height: 18px;
+
+    overflow: hidden;
+    resize: none;
 }
 
 select {
